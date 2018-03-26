@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
+import { BrowserDetect } from './BrowserDetect.js';
 
 function Square(props) {
     return (
@@ -123,10 +124,18 @@ class Game extends React.Component {
 }
 
 export default () => (
-    <Card>
-        <CardHeader title="Welcome to the 'Tic Tac Toe' game " />
-        <CardText><Game></Game></CardText>
-    </Card>
+    <div>
+        <Card>
+            <CardHeader title="Welcome to the 'Tic Tac Toe' game " />
+            <CardText><Game></Game></CardText>
+        </Card>
+        <div>
+            <p></p>
+        </div>
+        <Card>            
+            <CardText><BrowserDetect></BrowserDetect></CardText>
+        </Card>
+    </div>    
 );
 
 function calculateWinner(squares) {
